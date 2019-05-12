@@ -1,0 +1,18 @@
+<section class="book-profile">
+
+<hr class="book-seperator"/>
+
+{{ if .Params.bookImageUrl }}
+<img class="book-cover-img" src="{{ .Params.bookImageUrl }}" alt="《{{ .Params.bookName }}》書封">
+{{ end }}
+
+  <dl class="book-info">
+    {{ with .Params.bookName }}<dt>書名</dt><dd>{{ . }}</dd>{{ end }}
+    <dt>作者</dt><dd>{{ .Params.bookAuthor }}</dd>
+    {{ with .Params.bookTranslator }}<dt>譯者</dt><dd>{{ . }}</dd>{{ end }}
+    <dt>ISBN</dt><dd>{{ .Params.bookIsbn }}</dd>
+    <dt>出版社</dt><dd>{{ .Params.bookPublisher }}</dd>
+    <dt>出版日期</dt><dd>{{ .Params.bookPublishDate }}</dd>
+  </dl>
+
+</section>
