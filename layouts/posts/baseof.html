@@ -19,6 +19,8 @@
       {{ template "main" . }}
       {{ partial "docs/inject/footer" . }}
     </div>
+
+    {{ template "toc" . }}
   </main>
 
   {{ partial "docs/inject/body" . }}
