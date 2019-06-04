@@ -6,6 +6,9 @@
     <strong>{{ .Date.Format $dateFormat }}</strong>
   </h5>
 </header>
+
+{{ partial "tags" . }}
+
 <article class="markdown">
   {{- .Content -}}
 </article>
