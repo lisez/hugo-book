@@ -1,6 +1,5 @@
 # Hugo Book Theme
 
-[![Build Status](https://travis-ci.org/alex-shpak/hugo-book.svg?branch=master)](https://travis-ci.org/alex-shpak/hugo-book)
 [![Hugo](https://img.shields.io/badge/hugo-0.55-blue.svg)](https://gohugo.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -127,6 +126,10 @@ disableKinds = ['taxonomy', 'taxonomyTerm']
 # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
 # You can also specify this parameter per page in front matter
 BookToC = 3
+
+# (Optional, default none) Set the path to a logo for the book. If the logo is
+# /static/logo.png then the path would be 'logo.png'
+BookLogo = 'logo.png'
 
 # (Optional, default none) Set leaf bundle to render as side menu
 # When not specified file structure and weights will be used
@@ -259,6 +262,19 @@ sequenceDiagram
         Bob->>Alice: Thanks for asking
     end
 {{< /mermaid >}}
+```
+
+### KaTeX Syntax
+
+Render math formulas with [KaTeX](https://katex.org/)
+
+```
+{{< katex >}}
+x = \begin{cases}
+   a &\text{if } b \\
+   c &\text{if } d
+\end{cases}
+{{< /katex >}}
 ```
 
 ## Contributing

@@ -1,3 +1,7 @@
+---
+weight: 3
+---
+
 # Shortcodes
 
 ## Expand shortcode
@@ -166,3 +170,30 @@ sequenceDiagram
 {{< /mermaid >}}
 
 {{< /columns >}}
+
+
+## KaTeX
+
+{{< columns >}}
+
+```latex
+{{</* katex */>}}
+x = \begin{cases}
+   a &\text{if } b \\
+   c &\text{if } d
+\end{cases}
+{{</* /katex */>}}
+```
+
+<--->
+
+{{< katex >}}
+x = \begin{cases}
+   a &\text{if } b \\
+   c &\text{if } d
+\end{cases}
+{{< /katex >}}
+
+{{< /columns >}}
+
+
