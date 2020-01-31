@@ -1,9 +1,11 @@
 'use strict';
 
 (function() {
-  const indexCfg = {{ with .Site.Params.BookSearchConfig }}
-    {{ . }}
-  {{ end }};
+  const indexCfg = {{ with i18n "bookSearchConfig" }}
+    {{ . }};
+  {{ else }}
+   {};
+  {{ end }}
 
   indexCfg.doc = {
     id: 'id',

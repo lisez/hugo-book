@@ -10,7 +10,13 @@
 {{ partial "tags" . }}
 
 <article class="markdown">
-  {{- .Content -}}
+  <h1>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h1>
+  {{ partial "docs/post-meta" . }}
+  <p>
+    {{- .Content -}}
+  </p>
 </article>
 
 {{ partial "share-buttons" . }}

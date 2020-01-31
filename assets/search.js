@@ -1,12 +1,35 @@
 'use strict';
 
-{{- $searchData := resources.Get "search-data.js" | resources.ExecuteAsTemplate "search-data.js" . | resources.Minify | resources.Fingerprint }}
+{{ $searchDataFile := printf "%s.search-data.js" .Language.Lang }}
+{{ $searchData := resources.Get "search-data.js" | resources.ExecuteAsTemplate $searchDataFile . | resources.Minify | resources.Fingerprint }}
+
 (function() {
   const input = document.querySelector('#book-search-input');
   const results = document.querySelector('#book-search-results');
 
   input.addEventListener('focus', init);
   input.addEventListener('keyup', search);
+
+  document.addEventListener('keypress', focusSearchFieldOnKeyPress);
+
+  function focusSearchFieldOnKeyPress(e) {
+    if (input === document.activeElement) {
+      return;
+    }
+
+    const characterPressed = String.fromCharCode(e.charCode);
+    if (!isHotkey(characterPressed)) {
+      return;
+    }
+
+    input.focus();
+    e.preventDefault();
+  }
+
+  function isHotkey(character) {
+    const dataHotkeys = input.getAttribute('data-hotkeys') || '';
+    return dataHotkeys.indexOf(character) >= 0;
+  }
 
   function init() {
     input.removeEventListener('focus', init); // init once
