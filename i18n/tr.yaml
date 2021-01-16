@@ -1,14 +1,14 @@
 - id: Search
-  translation: Suche
+  translation: Arama
 
 - id: Edit this page
-  translation: Seite bearbeiten
+  translation: Bu sayfayı düzenle
 
 - id: Last modified by
-  translation: Zuletzt geändert von
+  translation: Son düzenleyen
 
 - id: Expand
-  translation: Erweitern
+  translation: Genişlet
 
 - id: bookSearchConfig
   translation: '{ cache: true }'
